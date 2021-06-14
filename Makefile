@@ -6,7 +6,7 @@
 #    By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/20 22:37:03 by ciglesia          #+#    #+#              #
-#    Updated: 2021/06/14 15:28:57 by ciglesia         ###   ########.fr        #
+#    Updated: 2021/06/14 18:04:07 by ciglesia         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -14,14 +14,19 @@ NAME		=	libstring.a
 
 INCLUDE		=	./include/
 
+#***************** SRC ********************#
 
 DIRSRC		=	./src/
 DIRC		=	$(DIRSRC)/c
 DIRASM		=	$(DIRSRC)/asm
 
-SRCX		=	ft_countchr.c
+DIRCALL		=	$(DIRC)/allocate
+DIRCALD		=	$(DIRC)/allocated
 
-SRCC		=	ft_strcat.c ft_strcpy.c ft_striteri.c ft_strmapi.c ft_strnequ.c ft_strsplit.c ft_strchr.c ft_strjoin.c ft_strncat.c ft_strnew.c ft_strstr.c ft_strclr.c ft_strdup.c ft_strlcat.c ft_strncmp.c ft_strnstr.c ft_strsub.c ft_strcmp.c ft_strequ.c ft_strlen.c ft_strncpy.c ft_strrchr.c ft_strtrim.c ft_strcmpn.c ft_striter.c ft_strmap.c ft_strndup.c ft_strrev.c ft_strdel.c $(SRCX)
+SRCCALD		=	ft_countchr.c ft_strchr.c ft_strcmpn.c ft_strequ.c ft_strlcat.c ft_strncmp.c ft_strnstr.c ft_strclr.c ft_striter.c ft_strncpy.c ft_strrchr.c ft_strcat.c ft_strdel.c ft_striteri.c ft_strncat.c ft_strnequ.c ft_strstr.c ft_memset.c ft_memdel.c ft_memcpy.c ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memmove.c
+SRCCALL		=	ft_strmap.c ft_strndup.c ft_strrev.c ft_strsub.c ft_strjoin.c ft_strmapi.c ft_strnew.c ft_strsplit.c ft_strtrim.c ft_memalloc.c
+
+SRCC		=	$(SRCCALL) $(SRCCALD)
 
 SRCASM		=	ft_strlen.s ft_strcpy.s ft_strcmp.s ft_strdup.s
 
@@ -69,7 +74,11 @@ E0M			=	 "\e[0m"
 				@printf $(GREEN)"Generating libelf asm objects... %-33.33s\r" $@
 				@$(NASM) $< -o $@
 
-%.o		:		../$(DIRC)/%.c
+%.o		:		../$(DIRCALL)/%.c
+				@printf $(GREEN)"Generating libelf c objects... %-33.33s\r" $@
+				@$(CC) $(CFLAGS) -I $(INCLUDE) -MMD -o $@ -c $<
+
+%.o		:		../$(DIRCALD)/%.c
 				@printf $(GREEN)"Generating libelf c objects... %-33.33s\r" $@
 				@$(CC) $(CFLAGS) -I $(INCLUDE) -MMD -o $@ -c $<
 
