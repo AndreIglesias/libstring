@@ -6,7 +6,7 @@
 #    By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/20 22:37:03 by ciglesia          #+#    #+#              #
-#    Updated: 2021/06/14 18:04:07 by ciglesia         ###   ########.fr        #
+#    Updated: 2021/06/14 22:06:24 by ciglesia         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -23,7 +23,7 @@ DIRASM		=	$(DIRSRC)/asm
 DIRCALL		=	$(DIRC)/allocate
 DIRCALD		=	$(DIRC)/allocated
 
-SRCCALD		=	ft_countchr.c ft_strchr.c ft_strcmpn.c ft_strequ.c ft_strlcat.c ft_strncmp.c ft_strnstr.c ft_strclr.c ft_striter.c ft_strncpy.c ft_strrchr.c ft_strcat.c ft_strdel.c ft_striteri.c ft_strncat.c ft_strnequ.c ft_strstr.c ft_memset.c ft_memdel.c ft_memcpy.c ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memmove.c
+SRCCALD		=	ft_countchr.c ft_strchr.c ft_strcmpn.c ft_strequ.c ft_strlcat.c ft_strncmp.c ft_strnstr.c ft_strclr.c ft_striter.c ft_strncpy.c ft_strrchr.c ft_strcat.c ft_strdel.c ft_striteri.c ft_strncat.c ft_strnequ.c ft_strstr.c ft_memset.c ft_memdel.c ft_memcpy.c ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memmove.c ft_bzero.c
 SRCCALL		=	ft_strmap.c ft_strndup.c ft_strrev.c ft_strsub.c ft_strjoin.c ft_strmapi.c ft_strnew.c ft_strsplit.c ft_strtrim.c ft_memalloc.c
 
 SRCC		=	$(SRCCALL) $(SRCCALD)

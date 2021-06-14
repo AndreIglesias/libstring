@@ -6,7 +6,7 @@
 /*   By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 14:06:57 by ciglesia          #+#    #+#             */
-/*   Updated: 2021/06/14 18:08:37 by ciglesia         ###   ########.fr       */
+/*   Updated: 2021/06/14 22:06:00 by ciglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strdup(const char *s);
 */
 
 /*
-**	str
+**		str
 */
 
 char	*ft_strcat(char *restrict s1, const char *restrict s2);
@@ -58,7 +58,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *s);
 
 /*
-**	mem
+**		mem
 */
 
 void	ft_memdel(void **ap);
@@ -71,9 +71,10 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 
 /*
-**	others
+**		others
 */
 
+void	ft_bzero(void *s, size_t n);
 int		ft_countchr(const char *s, int c);
 
 #endif
