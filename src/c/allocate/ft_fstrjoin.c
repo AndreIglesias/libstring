@@ -6,11 +6,11 @@
 /*   By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 20:39:19 by ciglesia          #+#    #+#             */
-/*   Updated: 2021/06/14 18:06:48 by ciglesia         ###   ########.fr       */
+/*   Updated: 2021/06/15 14:28:07 by ciglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libstring.h"
 
 char	*ft_fstrjoin(char *s1, char *s2)
 {
@@ -20,8 +20,7 @@ char	*ft_fstrjoin(char *s1, char *s2)
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);
 	len = ft_strlen(s1) + ft_strlen(s2) + 1;
-	str = ft_memalloc(len);
-	if (!str)
+	if (!(str = ft_memalloc(len)))
 		return (NULL);
 	if (str)
 	{

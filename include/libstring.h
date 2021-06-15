@@ -6,7 +6,7 @@
 /*   By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 14:06:57 by ciglesia          #+#    #+#             */
-/*   Updated: 2021/06/14 22:06:00 by ciglesia         ###   ########.fr       */
+/*   Updated: 2021/06/15 14:28:45 by ciglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void	ft_strdel(char **as);
 int		ft_strequ(char const *s1, char const *s2);
 void	ft_striter(char *s, void (*f)(char *));
 char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_fstrjoin(char *s1, char *s2);
 size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t size);
 char	*ft_strmap(char const *s, char (*f)(char));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
