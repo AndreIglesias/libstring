@@ -6,15 +6,16 @@
 #    By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/20 22:37:03 by ciglesia          #+#    #+#              #
-#    Updated: 2021/07/01 14:46:03 by ciglesia         ###   ########.fr        #
+#    Updated: 2021/07/02 18:57:57 by ciglesia         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME		=	libstring.a
 
 INC			=	./include/
+ROOTINC		=	../include/
 
-INCLUDE		=	-I $(INC)
+INCLUDE		=	-I $(INC) -I $(ROOTINC)
 
 #***************** SRC ********************#
 

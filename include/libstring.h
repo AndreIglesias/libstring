@@ -6,14 +6,14 @@
 /*   By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 14:06:57 by ciglesia          #+#    #+#             */
-/*   Updated: 2021/06/15 14:28:45 by ciglesia         ###   ########.fr       */
+/*   Updated: 2021/07/02 18:54:32 by ciglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBSTRING_H
 # define LIBSTRING_H
 
-# include <stdlib.h>
+# include "libtypes.h"
 
 /*
 **	ASM
