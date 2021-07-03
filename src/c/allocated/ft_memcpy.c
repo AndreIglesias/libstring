@@ -6,7 +6,7 @@
 /*   By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 20:44:52 by ciglesia          #+#    #+#             */
-/*   Updated: 2021/07/03 17:16:57 by ciglesia         ###   ########.fr       */
+/*   Updated: 2021/07/03 20:12:04 by ciglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,17 +42,17 @@ void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
 	unsigned char	*udst;
 	unsigned char	*usrc;
-	uintptr_t		pdst;
-	uintptr_t		psrc;
+	t_uintptr		pdst;
+	t_uintptr		psrc;
 
 	udst = (unsigned char *)dst;
 	usrc = (unsigned char *)src;
-	pdst = (uintptr_t)dst;
-	psrc = (uintptr_t)src;
+	pdst = (t_uintptr)dst;
+	psrc = (t_uintptr)src;
 	if (n >= sizeof(long) * 2
 		&& (pdst & (sizeof(long) - 1)) == (pdst & (sizeof(long) - 1)))
 	{
-		while (((uintptr_t)usrc & (sizeof(long) - 1)) != 0)
+		while (((t_uintptr)usrc & (sizeof(long) - 1)) != 0)
 		{
 			*udst++ = *usrc++;
 			n--;
