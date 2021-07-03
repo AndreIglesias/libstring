@@ -6,7 +6,7 @@
 /*   By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 20:44:40 by ciglesia          #+#    #+#             */
-/*   Updated: 2021/07/02 19:34:11 by ciglesia         ###   ########.fr       */
+/*   Updated: 2021/07/03 12:23:06 by ciglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static void	blast_bytes(size_t len, long int *dstp, int c)
 {
 	while (len > 0)
 	{
-		((byte *)(*dstp))[0] = c;
+		((t_byte *)(*dstp))[0] = c;
 		dstp += 1;
 		len -= 1;
 	}
@@ -85,7 +85,7 @@ void	*ft_memset (void *dstpp, int c, size_t len)
 			cccc |= (cccc << 16) << 16;
 		while (dstp % (sizeof(t_u_long)) != 0)
 		{
-			((byte *)dstp)[0] = c;
+			((t_byte *)dstp)[0] = c;
 			dstp += 1;
 			len -= 1;
 		}
