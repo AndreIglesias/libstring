@@ -6,7 +6,7 @@
 /*   By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 14:06:57 by ciglesia          #+#    #+#             */
-/*   Updated: 2021/07/03 18:48:13 by ciglesia         ###   ########.fr       */
+/*   Updated: 2021/07/07 14:43:57 by ciglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,6 @@
 # define LIBSTRING_H
 
 # include "libtypes.h"
-
-typedef struct s_sizes
-{
-	size_t	s1;
-	size_t	s2;
-}	t_sizes;
 
 /*
 **	ASM
@@ -78,6 +72,7 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memins(void **restrict mem, const void *restrict ins,
 			size_t pos, t_sizes sizes);
+void	strins(char array[][256], char *str, size_t pos, size_t size);
 
 /*
 **		others

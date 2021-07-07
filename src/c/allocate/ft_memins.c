@@ -6,12 +6,12 @@
 /*   By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 17:17:46 by ciglesia          #+#    #+#             */
-/*   Updated: 2021/07/03 20:05:22 by ciglesia         ###   ########.fr       */
+/*   Updated: 2021/07/06 21:06:41 by ciglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libstring.h"
-#include "libstd.h"
+
 void	*ft_memins(void **restrict mem, const void *restrict ins,
 				size_t pos, t_sizes sizes)
 {
