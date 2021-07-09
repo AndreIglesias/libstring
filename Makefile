@@ -6,7 +6,7 @@
 #    By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/20 22:37:03 by ciglesia          #+#    #+#              #
-#    Updated: 2021/07/06 20:27:58 by ciglesia         ###   ########.fr        #
+#    Updated: 2021/07/09 13:11:35 by ciglesia         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -25,13 +25,16 @@ DIRASM		=	$(DIRSRC)/asm
 
 DIRCALL		=	$(DIRC)/allocate
 DIRCALD		=	$(DIRC)/allocated
+DIREQASM	=	$(DIRC)/eqasm
 
 SRCCALD		=	ft_countchr.c ft_strchr.c ft_strcmpn.c ft_strequ.c ft_strlcat.c ft_strncmp.c ft_strnstr.c ft_strclr.c ft_striter.c ft_strncpy.c ft_strrchr.c ft_strcat.c ft_strdel.c ft_striteri.c ft_strncat.c ft_strnequ.c ft_strstr.c ft_memset.c ft_memdel.c ft_memcpy.c ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memmove.c ft_bzero.c
 SRCCALL		=	ft_strmap.c ft_strndup.c ft_strrev.c ft_strsub.c ft_strjoin.c ft_strmapi.c ft_strnew.c ft_strsplit.c ft_strtrim.c ft_memalloc.c ft_memins.c strins.c ft_fstrjoin.c
 
-SRCC		=	$(SRCCALL) $(SRCCALD)
+SRCEQASM	=	ft_strcpy.c
 
-SRCASM		=	ft_strlen.s ft_strcpy.s ft_strcmp.s ft_strdup.s
+SRCC		=	$(SRCCALL) $(SRCCALD) $(SRCEQASM)
+
+SRCASM		=	ft_strlen.s ft_strcmp.s ft_strdup.s #ft_strcpy.s
 
 #***************** DEPS ******************#
 
@@ -82,6 +85,10 @@ E0M			=	 "\e[0m"
 				@$(CC) $(CFLAGS) $(INCLUDE) -MMD -o $@ -c $<
 
 %.o		:		../$(DIRCALD)/%.c
+				@printf $(GREEN)"Generating libstring c objects...   %-33.33s\r" $@
+				@$(CC) $(CFLAGS) $(INCLUDE) -MMD -o $@ -c $<
+
+%.o		:		../$(DIREQASM)/%.c
 				@printf $(GREEN)"Generating libstring c objects...   %-33.33s\r" $@
 				@$(CC) $(CFLAGS) $(INCLUDE) -MMD -o $@ -c $<
 
