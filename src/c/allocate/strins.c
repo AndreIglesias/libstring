@@ -6,7 +6,7 @@
 /*   By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 20:26:48 by ciglesia          #+#    #+#             */
-/*   Updated: 2021/07/07 19:43:02 by ciglesia         ###   ########.fr       */
+/*   Updated: 2021/07/11 00:46:18 by ciglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 /*
 **	strins(&ls->files, &hola, 0, ls->size_f);
 */
+
+static void	element_copy(char array[][256], size_t pos, char *str)
+{
+	array[pos][0] = 0;
+	ft_strcpy(array[pos], str);
+}
 
 /*
 **void	strins(char ***array, char **str, size_t pos, size_t size)
@@ -30,30 +36,23 @@ void	strins(char array[][256], char *str, size_t pos, size_t size)
 
 	if (size == 0)
 	{
-		array[pos][0] = 0;
-		ft_strcpy(array[pos], str);
+		element_copy(array, pos, str);
 		return ;
 	}
 	last = (long)size;
 	last--;
 	while (4 <= (last - (long)pos) && 0 <= (last - (long)pos))
 	{
-		array[last + 1][0] = 0;
-		ft_strcpy(array[last + 1], array[last]);
-		array[last][0] = 0;
-		ft_strcpy(array[last], array[last - 1]);
-		array[last - 1][0] = 0;
-		ft_strcpy(array[last - 1], array[last - 2]);
-		array[last - 2][0] = 0;
-		ft_strcpy(array[last - 2], array[last - 3]);
+		element_copy(array, last + 1, array[last]);
+		element_copy(array, last, array[last - 1]);
+		element_copy(array, last - 1, array[last - 2]);
+		element_copy(array, last - 2, array[last - 3]);
 		last -= 4;
 	}
 	while ((long)pos <= last && 0 <= last)
 	{
-		array[last + 1][0] = 0;
-		ft_strcpy(array[last + 1], array[last]);
+		element_copy(array, last + 1, array[last]);
 		last--;
 	}
-	array[pos][0] = 0;
-	ft_strcpy(array[pos], str);
+	element_copy(array, pos, str);
 }
