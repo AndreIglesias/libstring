@@ -6,7 +6,7 @@
 /*   By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 20:44:40 by ciglesia          #+#    #+#             */
-/*   Updated: 2021/07/03 12:23:06 by ciglesia         ###   ########.fr       */
+/*   Updated: 2021/07/16 16:26:27 by ciglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ static void	blast_bytes(size_t len, long int *dstp, int c)
 	}
 }
 
-void	*ft_memset (void *dstpp, int c, size_t len)
+void	*ft_memset(void *dstpp, int c, size_t len)
 {
 	long int	dstp;
 	t_u_long	cccc;
